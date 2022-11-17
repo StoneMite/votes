@@ -1,0 +1,36 @@
+class Candidate:
+
+    def __init__(self,candidate_name,votes,N):
+        self.candidate_name=candidate_name
+        self.votes=votes
+        self.N=N
+        print(candidate_name," : ",votes,"Nº",N)
+
+    def end(self,candidate_name,votes,i):
+        print(candidate_name," RECUENTO FINAL: ",votes,i)
+  
+print("__CANDIDATOS PRESIDENCIALES__\n1)BORICH\n2)KAST")
+
+i=0
+votes_b=0
+votes_k=0
+while(i<164000):
+ x=int(input())
+
+ if x==1:
+    candidate_nameb="BORICH"
+    votes_b+=1
+    i+=1
+    a=Candidate(candidate_nameb,votes_b,i)
+
+ if x==2:
+    candidate_namek="KAST"
+    votes_k+=1
+    i+=1
+    b=Candidate(candidate_namek,votes_k,i)
+ 
+ if x==0:
+    i= 164000-i
+    a=Candidate(candidate_nameb,votes_b,i)
+    b=Candidate(candidate_namek,votes_k,0)
+    i=164000
